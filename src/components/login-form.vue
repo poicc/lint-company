@@ -21,8 +21,8 @@ export default {
   props: {},
   data() {
     return {
-      username: '陈蓉琪',
-      password: '123'
+      username: '',
+      password: ''
     }
   },
   methods: {
@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import '@/views/login/login.scss'
+@import './login.scss'
 </style>

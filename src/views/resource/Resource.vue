@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TabBar />
     <div class="container">
       <div class="container__operation">
         <div class="container__operation__icon">
@@ -42,14 +41,10 @@
 </template>
 
 <script>
-import TabBar from '../../components/TabBar.vue'
 // import get from '../../utils/request'
 import axios from 'axios'
 export default {
-  name: 'Activity',
-  components: {
-    TabBar
-  },
+  name: 'Resource',
   data() {
     return {
       clazzId: '',

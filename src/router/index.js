@@ -4,15 +4,14 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'Index',
-  //   component: () => import('../views/index/Index')
-  // },
   {
     path: '/',
-    name: 'TabBar',
-    component: () => import('@/components/TabBar')
+    redirect: '/index'
+  },
+  {
+    path: '/index',
+    name: 'Index',
+    component: () => import('../views/index/Index')
   },
   {
     path: '/login',
@@ -20,17 +19,17 @@ const routes = [
     component: () => import('../views/login/Login')
   },
   {
-    path: '/tabbar',
-    name: 'Tabbar',
-    component: () => import('../components/TabBar.vue'),
+    path: '/tabbar/:id',
+    name: 'TabBarChild',
+    component: () => import('@/components/TabBarChild.vue'),
     children: [
       {
-        path: '/resource',
+        path: 'resource',
         name: 'Resource',
         component: () => import('../views/resource/Resource')
       },
       {
-        path: '/activity',
+        path: 'activity',
         name: 'Activity',
         component: () => import('../views/activity/Activity')
       }

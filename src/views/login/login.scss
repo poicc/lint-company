@@ -1,290 +1,278 @@
 .body {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 
-    .login-tab {
-        height: 70px;
-        display: flex;
-        align-items: center;
+  .login-tab {
+    height: 70px;
+    display: flex;
+    align-items: center;
 
-        .hand {
-            cursor: pointer;
-        }
-
-        .logo {
-            float: left;
-            width: 160px;
-            height: 50px;
-        }
-
-        .icon {
-            width: 20px;
-            height: 20px;
-        }
+    .hand {
+      cursor: pointer;
     }
 
-    .login {
-        width: 100vw;
-        height: 80vh;
-        background-image: url('https://static-cdn-oss.mosoteach.cn/mosoteach2/common/images/login-bg.png');
-        background-size: cover;
-        // background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        // justify-content: center;
-        // align-items: center;
-        padding-top: 50px;
-        padding-left: 10vw;
-        .login-title {
-            width: 405px;
-            height: 147px;
-            // top: 20%;
-            // left: 15%;
-            // position: absolute;
-            // background-position-y: 180px;
-            background-image: url('https://static-cdn-oss.mosoteach.cn/mosoteach2/common/images/login-bg-font.png');
-        }
-        .nc-container #nc_1_wrapper{
-            width: 186px
-        }
-        .card-container {
-            width: 300px;
-            height: 400px;
-            margin-left: 18vw;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            .tab {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 50px;
-
-                .col-small {
-                    width: 3vw;
-                }
-
-                .change {
-                    border-bottom: 4px solid #0DC4DC;
-                    border-radius: 2px;
-                }
-
-                .hand {
-                    height: 30px;
-                    cursor: pointer;
-                }
-            }
-
-            .auto-login {
-                font-size: 14px;
-                color: gray;
-                display: flex;
-                margin-top: -10px;
-                .auto {
-                    
-
-                    input {
-                        margin-right: 5px;
-                        display: none;
-                    }
-
-                    label {
-                        display: inline-block;
-                        width: 13px;
-                        height: 13px;
-                        border-radius: 5px;
-                        border: 1px solid #0DC4DC;
-                        position: relative;
-                        cursor: pointer;
-                    }
-
-                    label::before {
-                        display: inline-block;
-                        content: " ";
-                        width: 10px;
-                        border: 2px solid #0DC4DC;
-                        height: 4px;
-                        border-top: none;
-                        border-right: none;
-                        transform: rotate(-55deg);
-                        // top: 3px;
-                        right: -1px;
-                        position: absolute;
-                        opacity: 0;
-                    }
-
-
-                    input:checked+label::before {
-                        opacity: 1;
-                        transform: all 0.5s;
-                    }
-
-                }
-
-                .forget {
-                    font-size: 14px;
-                    color: #0DC4DC;
-                    cursor: pointer;
-                }
-            }
-
-            .btn {
-                width: 100%;
-
-                button {
-                    width: 280px;
-                    height: 40px;
-                    color: #0DC4DC;
-                    background-color: #fff;
-                    border: 1px solid #0DC4DC;
-                }
-            }
-
-            .href {
-                color: #0DC4DC;
-                font-size: 14px;
-            }
-        }
-
+    .logo {
+      float: left;
+      width: 160px;
+      height: 50px;
     }
 
-    .footer {
-        margin: 0 auto;
-        text-align: center;
-        color: #666;
-        font-size: 12px;
-
-        div {
-            margin-top: 5px;
-        }
+    .icon {
+      width: 20px;
+      height: 20px;
     }
+  }
 
-    .container {
-        width: 80vw;
-        height: 80vh;
-        background-color: #fff;
-        margin: 0 auto;
+  .login {
+    width: 100vw;
+    height: 80vh;
+    background-image: url('https://static-cdn-oss.mosoteach.cn/mosoteach2/common/images/login-bg.png');
+    background-size: cover;
+    // background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    padding-top: 50px;
+    padding-left: 10vw;
+    .login-title {
+      width: 405px;
+      height: 147px;
+      // top: 20%;
+      // left: 15%;
+      // position: absolute;
+      // background-position-y: 180px;
+      background-image: url('https://static-cdn-oss.mosoteach.cn/mosoteach2/common/images/login-bg-font.png');
+    }
+    .nc-container #nc_1_wrapper {
+      width: 186px;
+    }
+    .card-container {
+      width: 400px;
+      height: 400px;
+      margin-left: 18vw;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .tab {
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        .tab {
+        height: 50px;
+
+        .col-small {
+          width: 3vw;
+        }
+
+        .change {
+          border-bottom: 4px solid #0dc4dc;
+          border-radius: 2px;
+        }
+
+        .hand {
+          height: 30px;
+          cursor: pointer;
+        }
+      }
+
+      .auto-login {
+        font-size: 14px;
+        color: gray;
+        display: flex;
+        margin: -10px auto;
+        justify-content: center;
+        .auto {
+          input {
+            margin-right: 5px;
+            display: none;
+          }
+
+          label {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 5px;
+            border: 1px solid #0dc4dc;
+            position: relative;
+            cursor: pointer;
+          }
+
+          label::before {
+            display: inline-block;
+            content: ' ';
+            width: 10px;
+            border: 2px solid #0dc4dc;
+            height: 4px;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-55deg);
+            // top: 3px;
+            right: -1px;
             position: absolute;
-            top:1%;
-            border-bottom: 1px solid #E1E1E1;
-            width: 90%;
-            display: flex;
-            align-items: center;
-            height: 60px;
-            .block {
-                width: 10px;
-                height: 10px;
-                background-color: #0DC4DC;
-            }
-            .right {
-                width: 80px;
-            }
+            opacity: 0;
+          }
+
+          input:checked + label::before {
+            opacity: 1;
+            transform: all 0.5s;
+          }
         }
-        .center {
-            width: 300px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
 
-           
-
-            .form {
-                position: relative;
-                overflow: hidden;
-               width: 450px;
-               height: 500px;
-               margin:0 auto;
-
-            }
-           
-            .auto {
-                font-size: 12px;
-                float: left;
-                input {
-                    color: #0DC4DC;
-                    margin-right: 5px;
-                    display: none;
-                }
-
-                label {
-                    display: inline-block;
-                    width: 13px;
-                    height: 13px;
-                    border-radius: 5px;
-                    border: 1px solid #0DC4DC;
-                    position: relative;
-                    cursor: pointer;
-                }
-
-                label::before {
-                    display: inline-block;
-                    content: " ";
-                    width: 10px;
-                    border: 2px solid #0DC4DC;
-                    height: 4px;
-                    border-top: none;
-                    border-right: none;
-                    transform: rotate(-55deg);
-                    // top: 3px;
-                    right: -1px;
-                    position: absolute;
-                    opacity: 0;
-                }
-
-
-                input:checked+label::before {
-                    opacity: 1;
-                    transform: all 0.5s;
-                }
-
-            }
-
-            .btn {
-                width: 100%;
-                margin-top: 20px;
-
-               
-
-
-                button {
-                    width: 280px;
-                    height: 40px;
-                    color: #0DC4DC;
-                    background-color: #fff;
-                    border: 1px solid #0DC4DC;
-                }
-                .disable {
-                    border: none;
-                    background-color: #e6e6e6;
-                    color: grey;
-                }
-            }
+        .forget {
+          font-size: 14px;
+          color: #0dc4dc;
+          cursor: pointer;
         }
+      }
+
+      .login-btn {
+        width: 100%;
+        margin-left: 60px;
+        button {
+          width: 280px;
+          height: 40px;
+          color: #0dc4dc;
+          background-color: #fff;
+          border: 1px solid #0dc4dc;
+        }
+      }
+
+      .href {
+        color: #0dc4dc;
+        font-size: 14px;
+      }
     }
+  }
+
+  .footer {
+    margin: 0 auto;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+
+    div {
+      margin-top: 5px;
+    }
+  }
+
+  .container {
+    width: 80vw;
+    height: 80vh;
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .tab {
+      position: absolute;
+      top: 1%;
+      border-bottom: 1px solid #e1e1e1;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      .block {
+        width: 10px;
+        height: 10px;
+        background-color: #0dc4dc;
+      }
+      .right {
+        width: 80px;
+      }
+    }
+    .center {
+      width: 300px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .form {
+        position: relative;
+        overflow: hidden;
+        width: 450px;
+        height: 500px;
+        margin: 0 auto;
+      }
+
+      .auto {
+        font-size: 12px;
+        float: left;
+        input {
+          color: #0dc4dc;
+          margin-right: 5px;
+          display: none;
+        }
+
+        label {
+          display: inline-block;
+          width: 13px;
+          height: 13px;
+          border-radius: 5px;
+          border: 1px solid #0dc4dc;
+          position: relative;
+          cursor: pointer;
+        }
+
+        label::before {
+          display: inline-block;
+          content: ' ';
+          width: 10px;
+          border: 2px solid #0dc4dc;
+          height: 4px;
+          border-top: none;
+          border-right: none;
+          transform: rotate(-55deg);
+          // top: 3px;
+          right: -1px;
+          position: absolute;
+          opacity: 0;
+        }
+
+        input:checked + label::before {
+          opacity: 1;
+          transform: all 0.5s;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: 20px;
+
+        button {
+          width: 280px;
+          height: 40px;
+          color: #0dc4dc;
+          background-color: #fff;
+          border: 1px solid #0dc4dc;
+        }
+        .disable {
+          border: none;
+          background-color: #e6e6e6;
+          color: grey;
+        }
+      }
+    }
+  }
 }
 
 .col-1 {
-    width: 7vw;
+  width: 7vw;
 }
 
 .col-2 {
-    width: 10vw;
+  width: 10vw;
 }
 
 .col-3 {
-    width: 20vw;
+  width: 20vw;
 }
 
 .col-6 {
-    width: 50vw;
+  width: 50vw;
 }
 
 .prim {
-    color: #0DC4DC;
+  color: #0dc4dc;
 }

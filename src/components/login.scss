@@ -1,0 +1,21 @@
+.input-border {
+    border: 1px solid #e3e3e3;
+    height: 40px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    .icon {
+        width: 15px;
+        height: 15px;
+    }
+    input {
+        border: none;
+        margin-left: 10px;
+        height: 35px;
+        outline:none;
+    }
+}
+.mt-3 {
+    margin-top: 20px;
+}

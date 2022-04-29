@@ -1,24 +1,22 @@
 <template>
   <div class="card">
     <div class="card__img">
-      <img
-        src="https://cdn.jsdelivr.net/gh/1802343228/image@main/avatar.3sylmzwhoqi0.png"
-      />
+      <img :src="item.imgUrl" />
       <div class="card__avatar">
         <img
-          src="https://cdn.jsdelivr.net/gh/1802343228/image@main/avatar.3sylmzwhoqi0.png"
+          src="https://cdn.jsdelivr.net/gh/poicc/image@main/me.2r7p6lo57zy0.webp"
         />
-        <div class="card__avatar__author">许莫淇</div>
+        <div class="card__avatar__author">mqxu</div>
       </div>
     </div>
 
     <div class="card__content">
-      <div class="card__content__title">校企合作项目设计与开发</div>
+      <div class="card__content__title">{{ item.clazzName }}</div>
       <div class="card__content__bottom">
-        <div class="card__content__bottom__class">软件2176Web虚拟3班</div>
+        <div class="card__content__bottom__class">{{ item.clazzName }}</div>
         <div style="flex: 1"></div>
         <div class="card__content__bottom__right">
-          <span class="iconfont">进入&#xe88e;</span>
+          <span class="iconfont" @click="goDetail(item.id)">进入&#xe88e;</span>
         </div>
       </div>
     </div>
@@ -30,6 +28,11 @@ export default {
   name: 'IndexCard',
   props: {
     item: Object
+  },
+  methods: {
+    goDetail(id) {
+      this.$router.push('/tabbar/' + id + '/resource')
+    }
   }
 }
 </script>
@@ -84,6 +87,7 @@ export default {
       }
       &__right {
         color: $primaryColor;
+        cursor: pointer;
       }
       .iconfont {
         font-size: 14px;

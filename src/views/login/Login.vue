@@ -47,7 +47,7 @@
           <div class="col-1"></div>
           <div class="forget" @click="forget()">忘记密码?</div>
         </div>
-        <div class="btn"><button @click="login">登录</button></div>
+        <div class="login-btn"><button @click="login">登录</button></div>
         <div class="href">注册蓝墨云账号 | 学校账号密码登录</div>
       </div>
     </div>
@@ -90,19 +90,12 @@ export default {
       this.form.password = password
     },
     login() {
+      console.log(this.form)
       axios
-        .post('http://127.0.0.1:4523/mock/930430/api/user/login/1', this.form)
+        .post('http://127.0.0.1:4523/mock/930430/api/user/login', this.form)
         .then((res) => {
-          console.log(res.data)
-          if (res.data.code === 200) {
-            localStorage.setItem('avatar', res.data.data.avatar)
-            localStorage.setItem('nickname', res.data.data.nickname)
-            localStorage.setItem('id', res.data.data.id)
-            this.$store.state.user.username = res.data.data.nickname
-            this.$store.state.user.id = res.data.data.id
-            this.$store.state.user.avatar = res.data.data.avatar
-            this.$router.push('/')
-          }
+          this.$store.commit('setUser', res.data.data)
+          this.$router.push('/')
         })
     },
     forget() {

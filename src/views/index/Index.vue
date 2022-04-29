@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>导航条</div>
+    <div><TabBar /></div>
     <div class="container">
       <div class="wrapper">
         <div class="wrapper__nav">
@@ -52,35 +52,59 @@
             <div style="flex: 1"></div>
             <div class="wrapper__content__nav__right">班课调序</div>
           </div>
-          <div class="wrapper__content__list">
-            <IndexCard class="wrapper__content__list__item" />
-            <IndexCard class="wrapper__content__list__item" />
-            <IndexCard class="wrapper__content__list__item" />
-            <IndexCard class="wrapper__content__list__item" />
-            <IndexCard class="wrapper__content__list__item" />
+          <div v-if="cardList.length !== 0" class="wrapper__content__list">
+            <IndexCard
+              v-for="(item, index) in cardList"
+              :key="index"
+              :item="item"
+              class="wrapper__content__list__item"
+            />
+          </div>
+          <div v-else class="wrapper__content__nothing">
+            <img
+              src="https://cdn.jsdelivr.net/gh/poicc/image@main/Snipaste_2022-04-29_23-21-24.6ypeh3rc2d8.webp"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import { get } from '@/utils/request.js'
 import IndexCard from '@/components/IndexCard'
+import Footer from '@/components/Footer'
+import TabBar from '@/components/TabBar'
 export default {
   name: 'Index',
   components: {
-    IndexCard
+    IndexCard,
+    Footer,
+    TabBar
+  },
+  mounted() {
+    get('/clazz/all?clazz=' + 'joined').then((res) => {
+      this.cardList = res.data
+      console.log(res.data)
+    })
   },
   data() {
     return {
-      isSelect: 1,
-      isShow: false
+      isSelect: 2,
+      isShow: false,
+      cardList: []
     }
   },
   methods: {
     changeCurrent(index) {
       this.isSelect = index
+      const param = index === 1 ? 'created' : 'joined'
+      get('/clazz/all?clazz=' + param).then((res) => {
+        this.cardList = res.data
+      })
     }
   }
 }
@@ -94,6 +118,7 @@ export default {
   justify-content: center;
   .wrapper {
     width: 980px;
+    min-height: 600px;
     &__nav {
       display: flex;
       align-items: center;
@@ -152,19 +177,22 @@ export default {
         border: 2px solid $primaryColor;
         border-radius: 10px;
         background: #fff;
-        &__select:after {
-          content: '▼';
-          padding: 12px 8px;
-          position: absolute;
-          right: 10px;
-          top: 0;
-          z-index: 1;
-          text-align: center;
-          width: 10%;
-          height: 100%;
-          pointer-events: none;
-          box-sizing: border-box;
+        select {
+          border: none;
         }
+        // &__select:after {
+        //   content: '▼';
+        //   padding: 12px 8px;
+        //   position: absolute;
+        //   right: 10px;
+        //   top: 0;
+        //   z-index: 1;
+        //   text-align: center;
+        //   width: 10%;
+        //   height: 100%;
+        //   pointer-events: none;
+        //   box-sizing: border-box;
+        // }
         .iconfont {
           margin-left: 5px;
           color: #a3a3a3;
@@ -172,7 +200,7 @@ export default {
         &__input {
           border: none;
           margin-left: 5px;
-
+          outline: none;
           &::placeholder {
             color: #a3a3a3;
           }
@@ -214,9 +242,14 @@ export default {
       &__list {
         display: flex;
         flex-wrap: wrap;
+        padding-bottom: 30px;
         &__item {
           margin: 15px 0 0 15px;
         }
+      }
+      &__nothing {
+        display: flex;
+        justify-content: center;
       }
     }
   }

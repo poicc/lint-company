@@ -9,7 +9,9 @@
       <!-- <img src="../assets/password.png" class="icon" /> -->
       <input placeholder="密码" />
     </div>
+    <div class="com-border">
       <NoCaptcha @slideCallback="finishSlide" :reload="reload" />
+    </div>
   </div>
 </template>
 
@@ -41,8 +43,12 @@ export default {
 }
 </script>
 
-<style lang="sass">
-
-@import '@/views/login/login.scss'
-
+<style lang="scss" scoped>
+@import './login.scss';
+.com-border {
+  height: 40px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+}
 </style>
