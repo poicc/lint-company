@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import '../style/login.scss'
+@import '@/views/login/login.scss'
 </style>

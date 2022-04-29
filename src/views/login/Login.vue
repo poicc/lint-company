@@ -113,5 +113,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import './login.scss';
+@import './login.scss'
 </style>
